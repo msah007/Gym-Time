@@ -3,12 +3,14 @@ import sys
 import random
 from mostFrequent import mF
 from haveSumWillAdd import hswa
+from rotatedArrays import rac
 
 class TestSequenceFunctions(unittest.TestCase):
 
     def setUp(self):
         self.mfclass = mF()
         self.hswaclass = hswa()
+        self.racclass = rac()
 
     ###############################################################
     # Testing mostFrequent
@@ -63,6 +65,29 @@ class TestSequenceFunctions(unittest.TestCase):
     #def test_hswa_10functionality_ordering(self):
 
     #def test_hswa_
+
+    ###################################################################
+    # Testing rotatedArrays 
+
+    def test_rotate_equal(self):
+        self.seqA = [1, 2, 3]
+        self.seqB = [1, 2, 3]
+        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
+
+    def test_rotate_impossible(self):
+        self.seqA = [1, 2, 3]
+        self.seqB = [2, 3, 4]
+        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), False)    
+
+    def test_rotate_left1(self):
+        self.seqA = [1, 2, 3]
+        self.seqB = [2, 3, 1]
+        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
+
+    def test_rotate_right1(self):
+        self.seqA = [1, 2, 3]
+        self.seqB = [3, 1, 2]
+        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
 
 
 
