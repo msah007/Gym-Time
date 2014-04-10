@@ -16,24 +16,20 @@ class rac:
 
 	# Check for rotated array
 	def RotatedArray(self, inputA, inputB):
-		if inputA == inputB:
-			return True
 		self.localA = list(inputA)
-		self.localA = self.RotateListR(self.localA)
 		for i in range(len(inputA)):
 			if self.localA == inputB:
 				return True
 			else:
-				self.RotateListR(self.localA)
+				for i in range(len(inputA)):
+					if i < (len(inputA) - 1):
+						self.localA[i] = self.localA[i+1]
+					else: 
+						self.localA[i] = self.localA[-(i+1)]
+		return False
 
-	def RotateListR(self, inputList):
-		self.rotate = list(inputList)
-		self.length = len(inputList)
-		for i in range(self.length):
-			if i < (self.length - 1):
-				self.rotate[i] = inputList[i+1]
-			else: 
-				self.rotate[i] = inputList[-(i+1)]
+
+		
 
 
 			
