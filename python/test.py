@@ -72,24 +72,32 @@ class TestSequenceFunctions(unittest.TestCase):
     def test_rotate_equal(self):
         self.seqA = [1, 2, 3]
         self.seqB = [1, 2, 3]
-        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)
 
     def test_rotate_impossible(self):
         self.seqA = [1, 2, 3]
         self.seqB = [2, 3, 4]
-        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), False)    
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), False)    
 
     def test_rotate_left1(self):
         self.seqA = [1, 2, 3]
         self.seqB = [2, 3, 1]
-        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)
 
     def test_rotate_right1(self):
         self.seqA = [1, 2, 3]
         self.seqB = [3, 1, 2]
-        self.assertEqual(racclass.RotatedArray([self.seqA, self.seqB]), True)
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)
 
+    def test_rotate_left2(self):
+        self.seqA = [1, 2, 3, 4]
+        self.seqB = [3, 4, 1, 2]
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)
 
+    def test_rotate_unsorted(self):
+        self.seqA = [3, 1, 0, 4]
+        self.seqB = [4, 3, 1, 0]
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)    
 
 if __name__ == '__main__':
     unittest.main()
