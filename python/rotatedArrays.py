@@ -17,15 +17,17 @@ class rac:
 	# Check for rotated array
 	def RotatedArray(self, inputA, inputB):
 		self.localA = list(inputA)
+		self.localAr = list(inputA)
 		for i in range(len(inputA)):
 			if self.localA == inputB:
 				return True
 			else:
 				for i in range(len(inputA)):
 					if i < (len(inputA) - 1):
-						self.localA[i] = self.localA[i+1]
+						self.localAr[i] = self.localA[i+1]
 					else: 
-						self.localA[i] = self.localA[-(i+1)]
+						self.localAr[i] = self.localA[-(i+1)]
+				self.localA = list(self.localAr)
 		return False
 
 
