@@ -1,9 +1,16 @@
+#===============================
+# test.py
+# Author: Benjamin
+# Purpose: Test-first practice
+#===============================
+
 import unittest
 import sys
 import random
 from mostFrequent import mF
 from haveSumWillAdd import hswa
 from rotatedArrays import rac
+from fib_iterative import fibint
 
 class TestSequenceFunctions(unittest.TestCase):
 
@@ -11,6 +18,7 @@ class TestSequenceFunctions(unittest.TestCase):
         self.mfclass = mF()
         self.hswaclass = hswa()
         self.racclass = rac()
+        self.fintbclass = fibint()
 
     ###############################################################
     # Testing mostFrequent
@@ -97,7 +105,25 @@ class TestSequenceFunctions(unittest.TestCase):
     def test_rotate_unsorted(self):
         self.seqA = [3, 1, 0, 4]
         self.seqB = [4, 3, 1, 0]
-        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)    
+        self.assertEqual(rac.RotatedArray(self.racclass, self.seqA, self.seqB), True)
+
+    ######################################################################
+    # Testing iterative fibonnaci (fib_iterative.py)
+
+    def test_fib_base_0(self):
+        self.assertEqual(fibint.fib_int(self.fintbclass, 0), 0)
+
+    def test_fib_base_1(self):
+        self.assertEqual(fibint.fib_int(self.fintbclass, 1), 1)
+
+    def test_fib_2(self):
+        self.assertEqual(fibint.fib_int(self.fintbclass, 2), 1)
+
+    def test_fib_6(self):
+        self.assertEqual(fibint.fib_int(self.fintbclass, 6), 8)
+
+    def test_fib_huge(self):
+        self.assertEqual(fibint.fib_int(self.fintbclass, 20), 6765)
 
 if __name__ == '__main__':
     unittest.main()
