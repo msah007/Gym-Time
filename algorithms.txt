@@ -1,0 +1,27 @@
+https://en.wikipedia.org/wiki/List_of_algorithms
+
+Sorting
+- Bubble
+- Insertion
+- Selection
+- Shell
+- Quick
+- Merge
+- External sorting
+
+Searching
+- linear and logarithmic time searching???
+
+Graph Theory
+- Adjacency List
+- Adjacent Matrix
+- DFS
+- BFS
+- Topological Sort
+
+Dynamic Programming
+
+Greedy Alrogithms
+
+Divide and Conquer
+
