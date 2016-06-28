@@ -1,0 +1,16 @@
+whereami?
+
+goals
+- trying to get tests
+  - mocha?
+  - jest (seems cooler)
+
+- jest
+  - need some sort of babely thing to transpile first
+  - maybe just try mocha?
+  - so need babel
+
+- tried "start" task runner
+  - no idea what's going on - it keeps trying to open a windows "how do you want to run this?" rather than node
+  - but the idea is cool
+- uninstalled "start"

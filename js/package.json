@@ -1,0 +1,25 @@
+{
+  "name": "gymtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "start ./tasks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdharris08/Gym-Time.git"
+  },
+  "author": "Ben Harris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdharris08/Gym-Time/issues"
+  },
+  "homepage": "https://github.com/bdharris08/Gym-Time#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
