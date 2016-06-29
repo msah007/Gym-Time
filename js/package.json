@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "start ./tasks"
+    "start": "node ./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,6 @@
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
-    "babel-plugin-transform-class-properties": "^6.10.2",
-    "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015-native-modules": "^6.6.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"

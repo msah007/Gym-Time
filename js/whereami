@@ -12,5 +12,12 @@ goals
 
 - tried "start" task runner
   - no idea what's going on - it keeps trying to open a windows "how do you want to run this?" rather than node
+  	- maybe the script is wrong? have to run it with "node >>>>"
   - but the idea is cool
 - uninstalled "start"
+
+
+--webpack 2
+ - treeshaking?
+ - +babel
+ - +mocha
