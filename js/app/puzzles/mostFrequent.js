@@ -14,6 +14,13 @@ const basicAnswer = 2;
 const tie = [0, 0, 1, 1, 2, 2, 3, 3, 4, 5];
 const tieAnswer = [0,1,2,3];
 const badInput = ['a', 0, 1, 1, 'a', {name:"curveball"}, {name:"curveball"}]
+const hugeInput = [];
+const hugeAnswer = [24];
+
+for (i = 0; i < 10000; i++) {
+  hugeInput.push(i);
+}
+hugeInput.push(24);
 
 
 
@@ -40,6 +47,7 @@ function count (inputArray) {
   return returnArray;
 }
 
-console.log("basic (answer = [2]): " + JSON.stringify(count(basic)));
-console.log("tie (answer = [0,1,2,3]: " + JSON.stringify(count(tie)));
-console.log("badInput (answer = [a, 1, object{curveball}] : " + JSON.stringify(count(badInput))); //can't handle objects
+console.log("basic (answer = [2]) : " + JSON.stringify(count(basic)));
+console.log("tie (answer = [0,1,2,3]) : " + JSON.stringify(count(tie)));
+console.log("badInput (answer = [a, 1, object{curveball}]) : " + JSON.stringify(count(badInput))); //can't handle objects
+console.log("hugeInput (answer = [24]) : " + JSON.stringify(count(hugeInput)));
