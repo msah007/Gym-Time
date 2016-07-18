@@ -14,7 +14,7 @@ Practice makes perfect
 
 4.Write fibbonaci iteratively and recursively (bonus: use dynamic programming)
 
-5.Find the only element in an array that only occurs once.
+//5.Find the only element in an array that only occurs once.
 
 6.Find the common elements of 2 int arrays
 
