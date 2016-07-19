@@ -34,7 +34,7 @@ function prepare(string, characterSet) {
   return returnString.toLowerCase();
 }
 
-//return new reversed string
+/*//return new reversed string
 function reverse(string) {
   var reversedString = "";
   for (var character of string) {
@@ -42,10 +42,21 @@ function reverse(string) {
   }
   return reversedString;
 }
+*/
 
-var methods = [];
+function checkPalindrome (rawString) {
+  var string = prepare(rawString, ignoreThese);
+  for (var i = 0; i < Math.floor(string.length / 2); i++) {
+    if (string.charAt(i) != string.charAt(string.length - i - 1)) {
+      return false;
+    } 
+  }
+  return true;
+}
 
-assert(reverse("test") == "tset", "test was not reversed");
+var methods = [checkPalindrome];
+
+//assert(reverse("test") == "tset", "test was not reversed");
 assert(prepare(" aha ", ignoreThese) == "aha", "_aha_ was not stripped to aha");
 assert(prepare("A man. a plan; a canal, Panama?!", ignoreThese) == "amanaplanacanalpanama", "panama string was not stripped");
 
