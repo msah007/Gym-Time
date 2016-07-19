@@ -27,7 +27,7 @@ function findSingletonBrutish (input) {
 	for (var i = 0; i < input.length; i++) {
 		var foundIt = false;
 		//console.log("================== " + i + " =======")
-		var tempArray = input.slice();
+		var tempArray = input.slice(); //duplicate input
 		var thisOne = tempArray.splice(i, 1);
 		tempArray.some(function(item, index) {
 			//console.log("some loop: " + item + " compared to: " + thisOne)
