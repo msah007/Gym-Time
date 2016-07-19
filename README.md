@@ -10,7 +10,8 @@ Practice makes perfect
 
 2.Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time)
 
-3.Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array            A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3}
+3.Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. 
+Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3}
 
 4.Write fibbonaci iteratively and recursively (bonus: use dynamic programming)
 
@@ -48,7 +49,9 @@ Strings
 
 19.Determine if 2 Strings are anagrams
 
-20.Check if String is a palindrome
+//20.Check if String is a palindrome
+20. Bonus: generate palindromes
+20. CHALLENGE: generate palindromatic squares like the wikipedia page
 
 21.Check if a String is composed of all unique characters
 
