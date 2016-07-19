@@ -22,7 +22,6 @@ testCases.set("l,o.l ; o! l!?", true);
 
 var ignoreThese = [" ", ",", ";", ".", "?", "!"];
 
-
 //strip characterSet from string and normalize case
 function prepare(string, characterSet) {
   var strippedCharacters = new Set(characterSet);
@@ -35,10 +34,18 @@ function prepare(string, characterSet) {
   return returnString.toLowerCase();
 }
 
-
+//return new reversed string
+function reverse(string) {
+  var reversedString = "";
+  for (var character of string) {
+    reversedString = character.concat(reversedString);
+  }
+  return reversedString;
+}
 
 var methods = [];
 
+assert(reverse("test") == "tset", "test was not reversed");
 assert(prepare(" aha ", ignoreThese) == "aha", "_aha_ was not stripped to aha");
 assert(prepare("A man. a plan; a canal, Panama?!", ignoreThese) == "amanaplanacanalpanama", "panama string was not stripped");
 
