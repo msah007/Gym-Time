@@ -21,6 +21,8 @@ Node.prototype.updateLeft = function(newTarget) {
   this.left = new Node(newTarget);
 };
 
+
+//return bool when we find it or not
 Node.prototype.has = function(searchValue) {
   if (this.value === searchValue) {
     return true;
@@ -31,6 +33,19 @@ Node.prototype.has = function(searchValue) {
     } else {
       //console.log(this.right.value)
       return this.right == null ? false : this.right.has(searchValue);
+    }
+  }
+};
+
+//return the node when we find it or null
+Node.prototype.search = function(searchValue) {
+  if (this.value === searchValue) {
+    return this;
+  } else {
+    if (searchValue < this.value) {
+      return this.left == null ? null : this.left.search(searchValue);
+    } else {
+      return this.right == null ? null : this.right.search(searchValue);
     }
   }
 };
@@ -47,16 +62,15 @@ testNode.updateLeft(1);
 assert(testNode.left.value === 1, "Node updateLeft didn't work");
 testNode.updateRight(3);
 assert(testNode.right.value === 3, "Node updateRight didn't work");
-console.log(testNode.right)
 testNode.right.updateRight(4);
-console.log(testNode.right)
 assert(testNode.right.right.value === 4, "Updating the child's left didn't work")
 assert(testNode.has(1), "has didn't find 1 left branch");
 assert(testNode.has(2), "has didn't find 2 root node");
 assert(testNode.has(3), "has didn't find 3 right branch");
-console.log(testNode.left.has(4))
+assert(testNode.search(2) == testNode, "search didn't find root node");
+assert(testNode.search(1) == testNode.left, "search didn't find 1 left branch");
+assert(testNode.search(3) == testNode.right, "search didn't find 3 right branch");
 assert(testNode.has(4), "has didn't find 4 right.left");
-//assert(testNode.has())
 testNode.insert(5);
 assert(testNode.has(5), "has didn't find the insert(5)");
 
