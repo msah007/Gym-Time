@@ -38,6 +38,7 @@ Node.prototype.has = function(searchValue) {
 };
 
 //return the node when we find it or null
+//depends on the tree being total ordered
 Node.prototype.search = function(searchValue) {
   if (this.value === searchValue) {
     return this;
@@ -51,7 +52,6 @@ Node.prototype.search = function(searchValue) {
 };
 
 //destructive insert returns true if successful
-//if branch is null, insert it there, else call again on the lower iteration
 Node.prototype.insert = function(newValue) {
   if (this.value === newValue) {
     return false;
@@ -85,10 +85,18 @@ assert(testNode.right.right.value === 4, "Updating the child's left didn't work"
 assert(testNode.has(1), "has didn't find 1 left branch");
 assert(testNode.has(2), "has didn't find 2 root node");
 assert(testNode.has(3), "has didn't find 3 right branch");
+assert(testNode.has(4), "has didn't find 4 right.left");
 assert(testNode.search(2) == testNode, "search didn't find root node");
 assert(testNode.search(1) == testNode.left, "search didn't find 1 left branch");
 assert(testNode.search(3) == testNode.right, "search didn't find 3 right branch");
-assert(testNode.has(4), "has didn't find 4 right.left");
 testNode.insert(5);
 assert(testNode.has(5), "has didn't find the insert(5)");
 
+var tree = new Node(6);
+assert(tree.insert(3), "tree insert(3) failed");
+assert(tree.insert(4), "tree insert(4) failed");
+assert(tree.insert(5), "tree insert(5) failed");
+assert(tree.has(6), "has didn't find root 6 in tree");
+assert(tree.has(3), "has didn't find root 3 in tree");
+assert(tree.has(4), "has didn't find root 4 in tree");
+assert(tree.has(5), "has didn't find root 5 in tree");
