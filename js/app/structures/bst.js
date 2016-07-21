@@ -50,9 +50,27 @@ Node.prototype.search = function(searchValue) {
   }
 };
 
+//destructive insert returns true if successful
+//if branch is null, insert it there, else call again on the lower iteration
 Node.prototype.insert = function(newValue) {
   if (this.value === newValue) {
-
+    return false;
+  } else {
+    if (newValue < this.value) {
+      if (this.left == null) {
+        this.left = new Node(newValue);
+        return true;
+      } else {
+        return this.left.insert(newValue)
+      }
+    } else {
+      if (this.right == null) {
+        this.right = new Node(newValue);
+        return true;
+      } else {
+        return this.right.insert(newValue);
+      }
+    }
   }
 };
 
@@ -74,5 +92,3 @@ assert(testNode.has(4), "has didn't find 4 right.left");
 testNode.insert(5);
 assert(testNode.has(5), "has didn't find the insert(5)");
 
-
-console.log(Node.magic());
