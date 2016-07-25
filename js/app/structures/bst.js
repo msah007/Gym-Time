@@ -5,6 +5,9 @@
 //problems:
 // -- when to rebalance? 
 // how do we know what's the mid point?
+//todo - fix a messed up tree
+//todo - rebalance
+//todo - delete nodes
 
 var assert = require("assert");
 
