@@ -75,7 +75,12 @@ Node.prototype.insert = function(newValue) {
 };
 
 var traverse = function(node) {
-  return "";
+  if (node === null) {
+    return ""
+  } else {
+    returnMe = traverse(node.left) + " " + node.value.toString() + " " + traverse(node.right); 
+    return returnMe.trim();
+  }
 }
 
 var testNode = new Node(2);
