@@ -113,7 +113,8 @@ Node.prototype.insert = function(newValue) {
 Node.prototype.remove = function(searchValue) {
   if (this.value === searchValue) {
     if (this.left == null && this.right == null) {
-      //if no children, just delete me
+      this.parent.removeChild(this); 
+      return true;
     }
     //if left child only, replace me with that
     //if right child only, replace me with that
