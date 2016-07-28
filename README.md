@@ -67,7 +67,7 @@ Strings
 
 Trees
 
-26.Implement a BST with insert and delete functions
+//26.Implement a BST with insert and delete functions
 
 27.Print a tree using BFS and DFS
 
