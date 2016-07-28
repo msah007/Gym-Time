@@ -38,6 +38,7 @@ Node.prototype.removeChild = function(child) {
   }
   return true;
 }
+};
 
 //return bool when we find it or not
 Node.prototype.has = function(searchValue) {
@@ -155,7 +156,7 @@ assert(!testNode.remove(10), "remove did not return false on missing value 10");
 assert(testNode.remove(1), "remove 1 failed");
 assert(!testNode.has(1), "remove 1 failed has check");
 assert(testNode.search(1) == null, "remove 1 failed search check");
-assert(traverse(test) == "2 3 4 5", "traverse didn't return 2 3 4 5 after the remove(1)");
+assert(traverse(testNode) == "2 3 4 5", "traverse didn't return 2 3 4 5 after the remove(1)");
 
 var tree = new Node(6);
 assert(tree.insert(3), "tree insert(3) failed");
