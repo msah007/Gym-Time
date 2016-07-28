@@ -119,6 +119,28 @@ Node.prototype.insert = function(newValue) {
   }
 };
 
+Node.prototype.insertNode = function(node) {
+  if (typeof node === typeof this) {
+    if (node.value < this.value) {
+      if (this.left == null) {
+        this.left = node;
+        return true;
+      } else {
+        return this.left.insertNode(node);
+      }
+    } else {
+      if (this.right == null) {
+        this.right = node;
+        return true;
+      } else {
+        return this.right.insertNode(node);
+      }
+    }
+  } else {
+    return false;
+  }
+}
+
 //destructive remove return true if successful
 Node.prototype.remove = function(searchValue) {
   if (this.value === searchValue) {
