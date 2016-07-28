@@ -15,15 +15,27 @@ var Node = function (val) {
   this.value = val;
   this.left = null;
   this.right = null;
+  this.parent = null;
 }
 
 Node.prototype.updateRight = function(newTarget) {
   this.right = new Node(newTarget);
+  this.right.parent = this;
 };
 Node.prototype.updateLeft = function(newTarget) {
   this.left = new Node(newTarget);
+  this.left.parent = this;
 };
-
+Node.prototype.removeChild = function(child) {
+  if (this.left === child) {
+    this.left = null;
+  } else if (this.right === child) {
+    this.right = null;
+  } else {
+    return false; //the kid is not my son
+  }
+  return true;
+}
 
 //return bool when we find it or not
 Node.prototype.has = function(searchValue) {
@@ -79,7 +91,20 @@ Node.prototype.insert = function(newValue) {
 
 //destructive remove return true if successful
 Node.prototype.remove = function(searchValue) {
-  return false;
+  if (this.value === searchValue) {
+    if (this.left == null && this.right == null) {
+      //if no children, just delete me
+    }
+    //if left child only, replace me with that
+    //if right child only, replace me with that
+    //if has both children, shit I don't know.
+  } else {
+    if (searchValue < this.value) {
+      return this.left == null ? false : this.left.remove(searchValue);
+    } else {
+      return this.right == null ? false : this.right.remove(searchValue);
+    }
+  }
 }
 
 var traverse = function(node) {
@@ -90,7 +115,6 @@ var traverse = function(node) {
     return returnMe.trim();
   }
 }
-
 
 
 var testNode = new Node(2);
@@ -117,7 +141,16 @@ assert(testNode.has(5), "has didn't find the insert(5)");
 //console.log(traverse(testNode));
 assert(traverse(testNode) == "1 2 3 4 5", "traverse didn't return 1 2 3 4 5");
 
-assert(testNode.remove(1) == true, "remove 1 failed");
+var testRemove = new Node(3);
+testRemove.insert(2);
+testRemove.insert(4);
+var child = testRemove.search(2);
+assert(testRemove.removeChild(child), "failed to remove child 2 from testRemove tree");
+assert(!testRemove.has(2), "removeChild 2 failed has test on testRemove");
+assert(traverse(testRemove) == "3 4", "removeChild 2 failed traverse test on testRemove");
+
+assert(!testNode.remove(10), "remove did not return false on missing value 10");
+assert(testNode.remove(1), "remove 1 failed");
 assert(!testNode.has(1), "remove 1 failed has check");
 assert(testNode.search(1) == null, "remove 1 failed search check");
 assert(traverse(test) == "2 3 4 5", "traverse didn't return 2 3 4 5 after the remove(1)");
