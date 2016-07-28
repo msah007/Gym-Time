@@ -38,6 +38,23 @@ Node.prototype.removeChild = function(child) {
   }
   return true;
 }
+Node.prototype.replaceLeftChild = function(child) {
+  if (typeof child === typeof this) {
+    this.left = child;
+    return true;
+  } else {
+    return false;
+  }
+};
+
+Node.prototype.replaceRightChild = function(child) {
+  if (typeof child === typeof this) {
+    this.right = child;
+    return true;
+  } else {
+    return false;
+  }
+};
 };
 
 //return bool when we find it or not
