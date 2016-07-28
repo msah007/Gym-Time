@@ -86,6 +86,11 @@ var traverse = function(node) {
   }
 }
 
+//destructive delete return true if successful
+var delete = function(node) {
+  return false;
+}
+
 var testNode = new Node(2);
 assert(testNode.value === 2, "Node constructor didn't work");
 assert(traverse(testNode) == "2", "traverse didn't even return root");
