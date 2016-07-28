@@ -37,7 +37,8 @@ Node.prototype.removeChild = function(child) {
     return false; //the kid is not my son
   }
   return true;
-}
+};
+
 Node.prototype.replaceLeftChild = function(child) {
   if (typeof child === typeof this) {
     this.left = child;
