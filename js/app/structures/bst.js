@@ -55,6 +55,16 @@ Node.prototype.replaceRightChild = function(child) {
     return false;
   }
 };
+
+Node.prototype.replaceMe = function(child) {
+  if (typeof child === typeof this) {
+    this.value = child.value;
+    this.left = child.left;
+    this.right = child.right;
+    return true;
+  } else {
+    return false;
+  }
 };
 
 //return bool when we find it or not
