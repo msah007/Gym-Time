@@ -18,14 +18,16 @@ var Node = function (val) {
   this.parent = null;
 }
 
-Node.prototype.updateRight = function(newTarget) {
+Node.prototype.newRight = function(newTarget) {
   this.right = new Node(newTarget);
   this.right.parent = this;
 };
-Node.prototype.updateLeft = function(newTarget) {
+
+Node.prototype.newLeft = function(newTarget) {
   this.left = new Node(newTarget);
   this.left.parent = this;
 };
+
 Node.prototype.removeChild = function(child) {
   if (this.left === child) {
     this.left = null;
@@ -120,13 +122,13 @@ var traverse = function(node) {
 var testNode = new Node(2);
 assert(testNode.value === 2, "Node constructor didn't work");
 assert(traverse(testNode) == "2", "traverse didn't even return root");
-testNode.updateLeft(1);
-assert(testNode.left.value === 1, "Node updateLeft didn't work");
+testNode.newLeft(1);
+assert(testNode.left.value === 1, "Node newLeft didn't work");
 assert(traverse(testNode) == "1 2", "traverse didn't return 1 2");
-testNode.updateRight(3);
-assert(testNode.right.value === 3, "Node updateRight didn't work");
+testNode.newRight(3);
+assert(testNode.right.value === 3, "Node newRight didn't work");
 assert(traverse(testNode) == "1 2 3", "traverse didn't return 1 2 3");
-testNode.right.updateRight(4);
+testNode.right.newRight(4);
 assert(testNode.right.right.value === 4, "Updating the child's left didn't work");
 assert(traverse(testNode) == "1 2 3 4", "traverse didn't return 1 2 3 4");
 assert(testNode.has(1), "has didn't find 1 left branch");
