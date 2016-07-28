@@ -125,6 +125,14 @@ Node.prototype.remove = function(searchValue) {
     if (this.left == null && this.right == null) {
       this.parent.removeChild(this); 
       return true;
+    } else if (this.left != null && this.right == null) {
+      this.replaceMe(this.left)
+      return true;
+    } else if (this.left == null && this.right != null) {
+      this.replaceMe(this.right)
+      return true;
+    } else {
+      }  
     }
     //if left child only, replace me with that
     //if right child only, replace me with that
