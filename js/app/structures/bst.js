@@ -151,6 +151,12 @@ var child = testRemove.search(2);
 assert(testRemove.removeChild(child), "failed to remove child 2 from testRemove tree");
 assert(!testRemove.has(2), "removeChild 2 failed has test on testRemove");
 assert(traverse(testRemove) == "3 4", "removeChild 2 failed traverse test on testRemove");
+testRemove.insert(2);
+testRemove.insert(1);
+testRemove.insert(5);
+assert(testRemove.remove(3), "testRemove remove 3 failed");
+assert(!testRemove.has(3), "testRemove remove 3 failed has test");
+assert(traverse(testRemove) == "1 2 4 5", "testRemove remove 3 failed traverse test.");
 
 assert(!testNode.remove(10), "remove did not return false on missing value 10");
 assert(testNode.remove(1), "remove 1 failed");
