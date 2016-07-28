@@ -154,11 +154,21 @@ Node.prototype.remove = function(searchValue) {
       this.replaceMe(this.right)
       return true;
     } else {
+      //pick the new root by furthest away from current root
+      if ((this.value - this.left.value) > (this.right.value - this.value)) {
+        //if new root is left, put right child as right child of my right child
+        var orphan = this.right;
+        this.replaceMe(this.left);
+        this.insertNode(orphan);
+        return true;
+      } else {
+        //if new root is right, put left child as left child of my left child
+        var orphan = this.left;
+        this.replaceMe(this.right);
+        this.insertNode(orphan);
+        return true;
       }  
     }
-    //if left child only, replace me with that
-    //if right child only, replace me with that
-    //if has both children, shit I don't know.
   } else {
     if (searchValue < this.value) {
       return this.left == null ? false : this.left.remove(searchValue);
