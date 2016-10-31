@@ -1,19 +1,19 @@
 Gym-Time
 ========
 
-Practice makes perfect
+*Practice makes perfect*
 
 
 
 
-//1.Find the most frequent integer in an array
+//1.Find the most frequent integer in an array.
 
-2.Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time)
+2.Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time).
 
 3.Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. 
 Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3}
 
-4.Write fibbonaci iteratively and recursively (bonus: use dynamic programming)
+4.Write fibbonaci iteratively and recursively (bonus: use dynamic programming).
 
 //5.Find the only element in an array that only occurs once.
 
@@ -41,7 +41,7 @@ Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3}
 
 
 
-Strings
+*Strings:*
 
 17.Find the first non-repeated character in a String
 
@@ -65,7 +65,7 @@ Strings
 
 
 
-Trees
+Trees:
 
 //26.Implement a BST with insert and delete functions
 
@@ -95,7 +95,7 @@ Trees
 
 
 
-Stacks, Queues, and Heaps
+*Stacks, Queues, and Heaps* :
 
 39.Implement a stack with push and pop functions
 
@@ -111,7 +111,7 @@ Stacks, Queues, and Heaps
 
 
 
-Linked Lists
+*Linked Lists:*
 
 45.Implement a linked list (with insert and delete functions)
 
@@ -129,7 +129,7 @@ Linked Lists
 
 
 
-Sorting
+*Sorting:*
 
 52.Implement bubble sort
 
